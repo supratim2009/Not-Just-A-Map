@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wh0-S2-Xva">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home Screen View Controller" id="BYZ-38-t0r" customClass="HomeMapViewController" customModule="Not_Just_A_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,343 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNF-25-kDr">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="organize" id="ME6-e8-Pm4">
+                                        <connections>
+                                            <action selector="leftToolBarButtonItemTapped:" destination="BYZ-38-t0r" id="kRt-uZ-NPc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="U1M-aI-Fsv"/>
+                                </items>
+                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-UC-mt8">
+                                <rect key="frame" x="183" y="72" width="235" height="29"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="Google"/>
+                                    <segment title="Bing"/>
+                                    <segment title="......."/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBe-JO-Gto">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hNF-25-kDr" firstAttribute="top" secondItem="fBe-JO-Gto" secondAttribute="bottom" id="71H-G2-SNv"/>
+                            <constraint firstItem="hNF-25-kDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AjH-92-OBR"/>
+                            <constraint firstItem="Xkr-UC-mt8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="72" id="Hzc-aA-Lrh"/>
+                            <constraint firstItem="fBe-JO-Gto" firstAttribute="top" secondItem="Xkr-UC-mt8" secondAttribute="bottom" constant="5" id="K2f-Cz-QEi"/>
+                            <constraint firstAttribute="trailing" secondItem="hNF-25-kDr" secondAttribute="trailing" id="htb-Fb-Ret"/>
+                            <constraint firstAttribute="bottom" secondItem="hNF-25-kDr" secondAttribute="bottom" id="iWL-sd-61V"/>
+                            <constraint firstAttribute="trailing" secondItem="fBe-JO-Gto" secondAttribute="trailing" id="kMd-7B-KAE"/>
+                            <constraint firstItem="fBe-JO-Gto" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lId-Np-NXA"/>
+                            <constraint firstAttribute="centerX" secondItem="Xkr-UC-mt8" secondAttribute="centerX" id="muK-Xb-Ano"/>
+                        </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="fBe-JO-Gto"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="K2f-Cz-QEi"/>
+                                <include reference="kMd-7B-KAE"/>
+                                <include reference="lId-Np-NXA"/>
+                                <include reference="muK-Xb-Ano"/>
+                                <include reference="71H-G2-SNv"/>
+                                <include reference="AjH-92-OBR"/>
+                                <include reference="htb-Fb-Ret"/>
+                                <include reference="iWL-sd-61V"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="28f-fx-WgG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="7dD-MH-cth"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="945" y="298.5"/>
+        </scene>
+        <!--Mapkit Map View Controller-->
+        <scene sceneID="dZh-S0-rdW">
+            <objects>
+                <viewController storyboardIdentifier="MAPKITVIEWCONTROLLER" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DbO-qL-4ws" customClass="MapkitMapViewController" customModule="Not_Just_A_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jxK-LT-2Ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="nWm-M3-GJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JU5-eT-Efm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-sQ-EAp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kLH-kV-u43">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="DbO-qL-4ws" eventType="valueChanged" id="jUF-lk-g3I"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kLH-kV-u43" secondAttribute="trailing" id="1po-ix-ZSB"/>
+                            <constraint firstItem="nWm-M3-GJH" firstAttribute="top" secondItem="5JM-sQ-EAp" secondAttribute="bottom" id="34C-eK-70z"/>
+                            <constraint firstItem="5JM-sQ-EAp" firstAttribute="top" secondItem="jxK-LT-2Ux" secondAttribute="bottom" id="Vnk-P8-rhK"/>
+                            <constraint firstAttribute="trailing" secondItem="5JM-sQ-EAp" secondAttribute="trailing" id="XMD-81-DN5"/>
+                            <constraint firstAttribute="bottom" secondItem="kLH-kV-u43" secondAttribute="bottom" constant="8" id="dy3-qG-Lge"/>
+                            <constraint firstItem="5JM-sQ-EAp" firstAttribute="leading" secondItem="JU5-eT-Efm" secondAttribute="leading" id="jO8-Cs-L7I"/>
+                        </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="5JM-sQ-EAp"/>
+                                <include reference="kLH-kV-u43"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Vnk-P8-rhK"/>
+                                <include reference="XMD-81-DN5"/>
+                                <include reference="jO8-Cs-L7I"/>
+                                <include reference="1po-ix-ZSB"/>
+                                <include reference="dy3-qG-Lge"/>
+                                <include reference="34C-eK-70z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pe0-P2-hhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="298.125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZNm-CT-dip">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wh0-S2-Xva" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qi1-wV-2nI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xQG-bL-zaT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytt-4c-fCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="299"/>
         </scene>
     </scenes>
 </document>
