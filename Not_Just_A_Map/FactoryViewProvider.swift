@@ -11,15 +11,18 @@ import UIKit
 class FactoryViewProvider: NSObject {
     class func getViewController (FromStroryBoard storyBoard :(UIStoryboard), ForMapType type :(String)) -> AnyObject? {
         var viewController :AnyObject?
-//        switch type {
-//        case "AppleMap" :
-//            viewController = [UIStoryboard ]
-//        case "GoogleMap" :
-//            
-//        case "BingMap":
-//            
-//        default :
-//        }
+        
+        switch type {
+        case "AppleMap" :
+            viewController = storyBoard .instantiateViewControllerWithIdentifier("MAPKITVIEWCONTROLLER")
+        case "GoogleMap" :
+            viewController = storyBoard .instantiateViewControllerWithIdentifier("GOOGLEMAPVIEWCONTROLLER")
+        case "BingMap":
+            viewController = storyBoard .instantiateViewControllerWithIdentifier("BINGMAPVIEWCONTROLLER")
+        default :
+            //viewController = storyBoard .instantiateViewControllerWithIdentifier("WEBMAPVIEWCONTROLLER")
+            break
+        }
     return viewController
     }
 }

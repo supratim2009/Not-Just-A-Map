@@ -18,6 +18,7 @@
 		0E4E2FFF1B203A4900246D77 /* HomeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E2FFE1B203A4900246D77 /* HomeMapViewController.swift */; };
 		0E4E30021B20529400246D77 /* MapkitMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E30011B20529400246D77 /* MapkitMapViewController.swift */; };
 		0E4E30041B20595C00246D77 /* FactoryViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E30031B20595C00246D77 /* FactoryViewProvider.swift */; };
+		0E4E30081B20738200246D77 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E30071B20738200246D77 /* GoogleMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		0E4E2FFE1B203A4900246D77 /* HomeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeMapViewController.swift; path = ViewControllers/HomeMapViewController.swift; sourceTree = "<group>"; };
 		0E4E30011B20529400246D77 /* MapkitMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapkitMapViewController.swift; sourceTree = "<group>"; };
 		0E4E30031B20595C00246D77 /* FactoryViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryViewProvider.swift; sourceTree = "<group>"; };
+		0E4E30071B20738200246D77 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleMapViewController.swift; path = ViewControllers/GoogleMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				0E4E2FFE1B203A4900246D77 /* HomeMapViewController.swift */,
 				0E4E30011B20529400246D77 /* MapkitMapViewController.swift */,
+				0E4E30071B20738200246D77 /* GoogleMapViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				0E4E2FFF1B203A4900246D77 /* HomeMapViewController.swift in Sources */,
 				0E4E2FDB1B2024F000246D77 /* Not_Just_A_Map.xcdatamodeld in Sources */,
+				0E4E30081B20738200246D77 /* GoogleMapViewController.swift in Sources */,
 				0E4E2FD81B2024F000246D77 /* AppDelegate.swift in Sources */,
 				0E4E30021B20529400246D77 /* MapkitMapViewController.swift in Sources */,
 				0E4E30041B20595C00246D77 /* FactoryViewProvider.swift in Sources */,

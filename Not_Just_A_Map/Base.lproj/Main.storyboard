@@ -27,7 +27,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="U1M-aI-Fsv"/>
                                 </items>
                             </toolbar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-UC-mt8">
+                            <segmentedControl opaque="NO" tag="124" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-UC-mt8">
                                 <rect key="frame" x="183" y="72" width="235" height="29"/>
                                 <segments>
                                     <segment title="Default"/>
@@ -35,9 +35,13 @@
                                     <segment title="Bing"/>
                                     <segment title="......."/>
                                 </segments>
+                                <connections>
+                                    <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dNY-zw-1gp"/>
+                                </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBe-JO-Gto">
+                            <containerView opaque="NO" tag="123" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBe-JO-Gto">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.83937669839999995" green="0.12480362320000001" blue="0.097700001189999996" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -177,23 +181,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="298.5"/>
+            <point key="canvasLocation" x="771" y="167.25"/>
         </scene>
         <!--Mapkit Map View Controller-->
         <scene sceneID="dZh-S0-rdW">
             <objects>
-                <viewController storyboardIdentifier="MAPKITVIEWCONTROLLER" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DbO-qL-4ws" customClass="MapkitMapViewController" customModule="Not_Just_A_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAPKITVIEWCONTROLLER" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DbO-qL-4ws" customClass="MapkitMapViewController" customModule="Not_Just_A_Map" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jxK-LT-2Ux"/>
                         <viewControllerLayoutGuide type="bottom" id="nWm-M3-GJH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JU5-eT-Efm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-sQ-EAp">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kLH-kV-u43">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kLH-kV-u43">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
                                     <segment title="Hybrid"/>
@@ -204,8 +206,11 @@
                                     <action selector="segmentValueChanged:" destination="DbO-qL-4ws" eventType="valueChanged" id="jUF-lk-g3I"/>
                                 </connections>
                             </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-sQ-EAp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1229719098" green="0.1143251227" blue="0.49324898099999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kLH-kV-u43" secondAttribute="trailing" id="1po-ix-ZSB"/>
                             <constraint firstItem="nWm-M3-GJH" firstAttribute="top" secondItem="5JM-sQ-EAp" secondAttribute="bottom" id="34C-eK-70z"/>
@@ -216,124 +221,144 @@
                         </constraints>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="5JM-sQ-EAp"/>
                                 <include reference="kLH-kV-u43"/>
+                                <include reference="5JM-sQ-EAp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Vnk-P8-rhK"/>
                                 <include reference="XMD-81-DN5"/>
                                 <include reference="jO8-Cs-L7I"/>
+                                <include reference="34C-eK-70z"/>
                                 <include reference="1po-ix-ZSB"/>
                                 <include reference="dy3-qG-Lge"/>
-                                <include reference="34C-eK-70z"/>
                             </mask>
                         </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapview" destination="5JM-sQ-EAp" id="j3x-X8-71U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pe0-P2-hhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="298.125"/>
+            <point key="canvasLocation" x="2002.5" y="171"/>
+        </scene>
+        <!--Google Map View Controller-->
+        <scene sceneID="aAR-f4-nZe">
+            <objects>
+                <viewController storyboardIdentifier="GOOGLEMAPVIEWCONTROLLER" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L2p-jn-ZyH" customClass="GoogleMapViewController" customModule="Not_Just_A_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VbJ-5U-CDP"/>
+                        <viewControllerLayoutGuide type="bottom" id="miK-pI-Nps"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="itk-Ci-iuj">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.65765999929999996" green="1" blue="0.57712647949999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ti5-pP-ExC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389" y="167.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZNm-CT-dip">

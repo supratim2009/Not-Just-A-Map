@@ -1,5 +1,5 @@
 //
-//  MapkitMapViewController.swift
+//  GoogleMapViewController.swift
 //  Not_Just_A_Map
 //
 //  Created by 01HW664133 on 04/06/15.
@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import MapKit
 
-class MapkitMapViewController: UIViewController,MKMapViewDelegate {
+class GoogleMapViewController: UIViewController {
 
-    @IBOutlet weak var mapview: MKMapView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapview.delegate = self
+
         // Do any additional setup after loading the view.
     }
 
@@ -34,9 +31,5 @@ class MapkitMapViewController: UIViewController,MKMapViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    func mapViewDidFinishLoadingMap(mapView: MKMapView!) {
-        println("Did Finish :\(NSStringFromCGRect(self.view.frame))")
-    }
-    @IBAction func segmentValueChanged(sender: UISegmentedControl) {
-    }
+
 }
